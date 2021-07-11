@@ -4,9 +4,10 @@ metadata:
   name: jenkins-claim
   namespace: jenkins
 spec:
-  storageClassName: local-path
+  storageClassName: managed-premium-custom
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 10Gi
+
