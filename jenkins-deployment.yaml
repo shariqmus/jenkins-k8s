@@ -12,6 +12,9 @@ spec:
       labels:
         app: jenkins
     spec:
+      securityContext:
+        fsGroup: 1000 
+        runAsUser: 0
       containers:
       - name: jenkins
         image: jenkins/jenkins:lts-jdk11 #jenkins/jenkins:lts
@@ -27,3 +30,4 @@ spec:
         - name: jenkins-vol
           persistentVolumeClaim:
             claimName: jenkins-claim
+
